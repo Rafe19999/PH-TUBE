@@ -9,8 +9,8 @@ function fetchCategories() {
 }
 
 //fetching videos API
-function fetchVideos() {
-  fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
+function fetchVideos(searchText = "") {
+  fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchText}`)
     .then(res => res.json())
     .then(data => displayVideos(data.videos))
 }
@@ -28,9 +28,9 @@ function displayCategories(data) {
   })
 }
 
-function removeActiveClass(){
+function removeActiveClass() {
   const activeButtons = document.getElementsByClassName('category-btn')
-  for(let button of activeButtons){
+  for (let button of activeButtons) {
     button.classList.remove('active');
   }
 }
@@ -90,23 +90,23 @@ function displayVideos(data) {
   </div>
 `;
 
- return;
+    return;
   }
-  else{
+  else {
     videoContainer.classList.add('grid');
   }
 
-    data.forEach(item => {
-      console.log(item);
-      const cart = document.createElement('div');
-      cart.classList = 'card card-compact';
-      cart.innerHTML = `
+  data.forEach(item => {
+    console.log(item);
+    const cart = document.createElement('div');
+    cart.classList = 'card card-compact';
+    cart.innerHTML = `
     <figure class ="relative">
     <img class="w-full h-[200px] rounded-lg object-cover"
       src= ${item.thumbnail};
       alt="Content Images" />
       ${item.others.posted_date?.length === 0 ? "" : `<span class = "absolute right-2 bottom-2 text-white bg-gray-950 text-xs font-medium p-1 rounded-lg">${timeConvertor(item.others.posted_date)}  </span>`
-        }
+      }
       
   </figure>
   <div class="px-0 py-2 flex items-center">
@@ -123,10 +123,21 @@ function displayVideos(data) {
     </div>
   </div>
     `
-      videoContainer.append(cart);
-    })
-  }
+    videoContainer.append(cart);
+  })
+}
 
+function blog() {
+  window.location.href = "./blog.html";
+}
+
+function backButton() {
+  window.location.href = "./index.html";
+}
+
+document.getElementById("searchInput").addEventListener("keyup", (e) => {
+  fetchVideos(e.target.value);
+})
 
 
 
