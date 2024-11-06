@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="ph-tube-resources-main/Icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Css Designs are implemented here -->
+  <style>
+    .inter {
+      font-family: "Manrope", serif;
+    }
+
+    .active {
+      background-color: red;
+      color: #ffffff;
+    }
+  </style>
+
+
+  <title>PH-TUBE</title>
+</head>
+
+<body class="inter max-w-screen-2xl mx-auto">
+  <header>
+
+    <!-- PH-TUBE Navbar section -->
+    <nav class="mt-4">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <img class="lg:ml-16 ml-7" src="ph-tube-resources-main/Logo.png" alt="PH-TUBE Logo">
+        </div>
+        <div class="navbar-center hidden md:flex">
+          <button class="text-lg font-medium btn text-[#252525] w-[148px] h-[42px]">Sort by View</button>
+        </div>
+        <div class="navbar-end">
+          <a class="btn lg:mr-16 mr-7 w-[79px] h-[42px] bg-[#FF1F3D] text-[#FFFFFF] text-lg font-medium">Blog</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Underline (Horizontal line) -->
+    <hr class="border-t-2 border-gray-300 mt-2 w-[90%] mx-auto">
+
+  </header>
+  <main>
+    <section>
+      <!-- Body categories Section begain from here-->
+      <div id="categories" class="flex justify-center gap-3 font-medium text-[#25252525] mt-4"></div>
+      <!-- Body categories Section ends here-->
+    </section>
+
+
+    <section id="videos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-4 px-4">
+      <!-- content section begain from here -->
+
+      <!-- content section ends from here -->
+    </section>
+  </main>
+
+
+  <footer>
+
+  </footer>
+
+  <!-- scripts -->
+  <script src="java-script/loadCategories.js"></script>
+</body>
+
+</html>
